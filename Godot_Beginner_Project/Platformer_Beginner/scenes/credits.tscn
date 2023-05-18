@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4deixk3tawud"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_i4tkh"]
+[ext_resource type="FontFile" uid="uid://ddk0ascrak0mb" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_rak7w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r720a"]
+font = ExtResource("1_rak7w")
+font_size = 12
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i4tkh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 18.0
+offset_right = 394.0
+offset_bottom = 153.0
+text = "This was a beginner project for me to showcase some skills I obtained while learning the Godot Engine"
+label_settings = SubResource("LabelSettings_r720a")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -47.0
+offset_right = 390.0
+offset_bottom = 88.0
+text = "Credits: Everything you saw/heard was by me, Alvin Nguyen"
+label_settings = SubResource("LabelSettings_r720a")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 112.0
+offset_right = 392.0
+offset_bottom = 247.0
+text = "Originally the game was supposed to be way harder, but I got mad trying to clear my own game
+Thanks for playing!"
+label_settings = SubResource("LabelSettings_r720a")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 235.0
+offset_right = 295.0
+offset_bottom = 266.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

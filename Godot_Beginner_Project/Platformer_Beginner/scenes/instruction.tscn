@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://vcyq1ig87f4d"]
+
+[ext_resource type="FontFile" uid="uid://ddk0ascrak0mb" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_sejlx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5h4v"]
+font = ExtResource("1_sejlx")
+font_size = 10
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.960784)
+
+[node name="Instruction_1" type="Label"]
+offset_left = 64.0
+offset_top = 117.0
+offset_right = 232.0
+offset_bottom = 171.0
+text = "Right arrow or D
+to move right"
+label_settings = SubResource("LabelSettings_v5h4v")

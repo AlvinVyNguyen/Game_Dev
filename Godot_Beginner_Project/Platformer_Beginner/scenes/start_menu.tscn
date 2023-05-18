@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpr1hr7w0p6km"]
+
+[ext_resource type="PackedScene" uid="uid://bnsf1b2rkcghf" path="res://scenes/bg.tscn" id="1_56d3c"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_yl2vm"]
+[ext_resource type="Texture2D" uid="uid://n6codsgwapif" path="res://assets/textures/bg/Pink.png" id="2_kkbhs"]
+[ext_resource type="FontFile" uid="uid://ddk0ascrak0mb" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_yebkp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1gcuy"]
+font = ExtResource("3_yebkp")
+font_size = 32
+font_color = Color(1, 0.188235, 1, 1)
+outline_size = 7
+outline_color = Color(0.968627, 0.968627, 0.968627, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5l8sr"]
+font = ExtResource("3_yebkp")
+font_color = Color(0.254902, 1, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tlnx"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[node name="Start Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yl2vm")
+
+[node name="BG" parent="." instance=ExtResource("1_56d3c")]
+bg_texture = ExtResource("2_kkbhs")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 2.0
+offset_right = 192.0
+offset_bottom = 104.0
+grow_horizontal = 2
+text = "Simmering's
+Adventure
+"
+label_settings = SubResource("LabelSettings_1gcuy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_top = 75.0
+offset_right = 203.0
+offset_bottom = 177.0
+grow_horizontal = 2
+text = "A fun little casual game"
+label_settings = SubResource("LabelSettings_5l8sr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -114.0
+offset_right = 58.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_yebkp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tlnx")
+text = "Enter Hell"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -63.0
+offset_right = 26.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_yebkp")
+text = "Quit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
